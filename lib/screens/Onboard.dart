@@ -92,14 +92,14 @@ class _OnboardState extends State<Onboard> {
                                   borderRadius: BorderRadius.circular(10),
                                 ),
                                 //TODO: Do not go through all onboard
-                                child: FlatButton(
+                                child: TextButton(
                                   child: Text(
                                     _current_index == 4
                                         ? "Register"
                                         : "Next",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        color: _current_index == 4
+                                        color: _current_index == 5
                                             ? Colors.white
                                             : Colors.black),
                                   ),

@@ -14,6 +14,8 @@ class Register extends StatefulWidget {
 class _RegisterState extends State<Register> {
   final formKey = GlobalKey<FormState>();
   String name="";
+  String selectedValue = 'Identification Type(optional)';
+  
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
@@ -106,24 +108,38 @@ class _RegisterState extends State<Register> {
               //Country TODO: Add countries dropdown
               SizedBox(height: height*0.05),
               TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Counntry",
-                  hintText: "Select your country",
-                  hintStyle: TextStyle(fontSize: 18 ), //hint text style
-                  labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
+                  decoration: InputDecoration(
+                    labelText: "Country",
+                    hintText: "Select your Country",
+                    hintStyle: TextStyle(fontSize: 18), //hint text style
+                    labelStyle: TextStyle(
+                        fontSize: 16,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w600),
+                  ),
                 ),
-              ),
+              // TextFormField(
+              //   decoration: InputDecoration(
+              //     labelText: "Counntry",
+              //     hintText: "Select your country",
+              //     hintStyle: TextStyle(fontSize: 18 ), //hint text style
+              //     labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
+              //   ),
+              // ),
 
               //Identification Type TODO: Add ID dropdown
               SizedBox(height: height*0.05),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Identification Type(Optional)",
-                  hintText: "Select your ID Type",
-                  hintStyle: TextStyle(fontSize: 18 ), //hint text style
-                  labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
+              DropdownButtonFormField(
+                value: selectedValue, 
+                validator: (value) =>
+                      value == null ? "Select your ID Type" : null,
+                onChanged: (String? newValue){
+                  setState(() {
+                    selectedValue = newValue!;
+                  });
+                 },
+                 items: dropdownItems,
                 ),
-              ),
 
               //ID Number
               SizedBox(height: height*0.05),

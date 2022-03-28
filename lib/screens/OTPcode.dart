@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class OTPcode extends StatefulWidget {
@@ -14,7 +16,7 @@ class _OTPcodeState extends State<OTPcode> {
     return Scaffold(
       appBar: AppBar(
           centerTitle:true,
-          title: Text("STEP 2 OF 2"),
+          title: Text("STEP 3 OF 3"),
           titleTextStyle: TextStyle(color: Colors.black54, fontSize: 14, fontWeight: FontWeight.w300),
           backgroundColor: Colors.white,
           elevation: 0,
@@ -42,64 +44,33 @@ class _OTPcodeState extends State<OTPcode> {
                 SizedBox(height: height*0.04),
                 Text("You are almost there!", style: TextStyle(fontSize: 22, color:Colors.black, fontWeight: FontWeight.bold),),
                 Text("You only have to enter an OTP code we sent via SMS to your registered phone number +233203620462", style: TextStyle(fontSize: 19, color:Colors.black54, fontWeight: FontWeight.normal),),
-                Text("OTP", style: TextStyle(fontSize: 19, color:Colors.black54, fontWeight: FontWeight.normal),),
                 //OTP Field
-                SizedBox(height: height*0.05),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    _textFieldOTP(first: true, last: false),
-                    _textFieldOTP(first: false, last: false),
-                    _textFieldOTP(first: false, last: false),
-                    _textFieldOTP(first: false, last: true),
-                  ],
-                ),
+                SizedBox(height: height*0.02),
+                      Container(
+                        height: 70,
+                        child: TextField(
+                        decoration: InputDecoration(
+                          //ellipse icon not added
+                          // prefixIcon: Icon(Icons.arrow_circle_up, color: Colors.green, size: 11,),
+                          suffixText: '00:48', suffixStyle: TextStyle(
+                        fontSize: 14,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                        ),
+                        border: OutlineInputBorder(),
+                          labelText: 'OTP*',
+                          hintText: '4450',
+                          hintStyle: TextStyle(
+                          fontSize: 28,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w900)
+                         ), 
+                        ),
+                      ),
               ],
             ),
           ),
-        floatingActionButton: FloatingActionButton(
-            onPressed: () => {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) => OTPcode()),
-              )
-            },
-            child: Icon(Icons.arrow_forward),
-            backgroundColor: Colors.teal)
+        
         );
-  }
-
-  Widget _textFieldOTP({required bool first, last}){
-    return Container(
-      height: 85,
-      child: AspectRatio(
-        aspectRatio: 1.0,
-        child: TextField(
-          autofocus: true,
-          onChanged: (value) {
-            if (value.length == 1 && last == false) {
-              FocusScope.of(context).nextFocus();
-            }
-            if (value.length == 0 && first == false) {
-              FocusScope.of(context).previousFocus();
-            }
-          },
-          showCursor: false,
-          readOnly: false,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-          keyboardType: TextInputType.number,
-          maxLength: 1,
-          decoration: InputDecoration(
-            counter: Offstage(),
-            enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Colors.black12),
-                borderRadius: BorderRadius.circular(12)),
-            focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Colors.purple),
-                borderRadius: BorderRadius.circular(12)),
-          ),
-        ),
-      ),
-    );
   }
 }

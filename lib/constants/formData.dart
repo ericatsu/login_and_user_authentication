@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 class formData extends StatefulWidget {
@@ -37,4 +39,15 @@ class _formDataState extends State<formData> {
         )
     );
   }
+}
+
+List<DropdownMenuItem<String>> get dropdownItems {
+  List<DropdownMenuItem<String>> IdItems = [
+    DropdownMenuItem(child: Text("Identification Type(optional)", style: TextStyle(
+              fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),), value: "Identification Type(optional)"),
+    DropdownMenuItem(child: Text("NHIS Card"), value: "NHIS Card"),
+    DropdownMenuItem(child: Text("Ghana Card"), value: "Ghana Card"),
+    DropdownMenuItem(child: Text("Others"), value: "Others"),
+  ];
+  return IdItems;
 }

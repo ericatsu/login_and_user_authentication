@@ -54,6 +54,7 @@ class _PlatformState extends State<Platform> {
                   decoration: InputDecoration(
                     labelText: "Package",
                     hintText: "Select your package",
+                    suffixIcon: Icon(Icons.arrow_drop_down),
                     hintStyle: TextStyle(fontSize: 18 ), //hint text style
                     labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
                   ),
@@ -96,6 +97,7 @@ class _PlatformState extends State<Platform> {
                   decoration: InputDecoration(
                     labelText: "Sponsor Code",
                     hintText: "Eg: 10123123",
+                    suffixIcon: Icon(Icons.arrow_drop_down),
                     hintStyle: TextStyle(fontSize: 18 ), //hint text style
                     labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
                   ),
@@ -107,6 +109,7 @@ class _PlatformState extends State<Platform> {
                   decoration: InputDecoration(
                     labelText: "Placement Code",
                     hintText: "Eg: 10123123",
+                    suffixIcon: Icon(Icons.arrow_drop_down),
                     hintStyle: TextStyle(fontSize: 18 ), //hint text style
                     labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
                   ),

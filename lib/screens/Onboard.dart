@@ -1,187 +1,98 @@
 import 'package:flutter/material.dart';
+import 'package:login_and_user_authentication/OnboardScreens/Onboard1.dart';
+import 'package:login_and_user_authentication/OnboardScreens/Onboard2.dart';
+import 'package:login_and_user_authentication/OnboardScreens/Onboard4.dart';
+import 'package:login_and_user_authentication/OnboardScreens/Onboard5.dart';
+import 'package:login_and_user_authentication/OnboardScreens/onboard3.dart';
 import 'package:login_and_user_authentication/screens/Register.dart';
-
-import '../constants/constant.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Onboard extends StatefulWidget {
-  const Onboard({Key? key}) : super(key: key);
+  const Onboard({ Key? key }) : super(key: key);
 
   @override
   State<Onboard> createState() => _OnboardState();
 }
 
 class _OnboardState extends State<Onboard> {
-  int _current_index = 0;
+  // Keep track of pages
+  PageController _controller = PageController();
+  //Check whether on last page
+  bool onLastPage = false;
+
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
-        fit: StackFit.expand,
-        children: <Widget>[
-          Image.asset(
-            pages[_current_index].img,
-            fit: BoxFit.cover,
-          ),
-          SafeArea(
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: EdgeInsets.only(right: 20),
-                child: Text(
-                  'Skip',
+        children: [
+          // Pageview
+          PageView(
+          controller: _controller,
+          onPageChanged: (index){
+           setState(() {
+             onLastPage = (index == 4);
+           });
+          },
+          children: [
+            Onboard1(),
+            Onboard2(),
+            Onboard3(),
+            Onboard4(),
+            Onboard5()
+          ],
+        ),
+        //Sliders
+        Container(
+          // Alignments of dots
+          // alignment: Alignment(0, 0.65),
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              //Skip
+              SafeArea(child: 
+              Align(
+               alignment: Alignment.topRight,
+               child: Padding(
+                 padding: const EdgeInsets.all(8.0),
+                 child: GestureDetector(
+                   onTap: () {
+                     _controller.jumpToPage(4);
+                    },
+                   child: Text('Skip',
                   style: TextStyle(color: Colors.white, fontSize: 18),
-                ),
-              ),
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Padding(
-              padding: const EdgeInsets.all(5),
-              child: Container(
-                height: size.height * .4,
-                width: size.width,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: <Widget>[
-                      //Title
-                      Text(
-                        pages[_current_index].title,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 24,
-                        ),
-                      ),
-                      //Subtitle
-                      Container(
-                        width: size.width * .7,
-                        child: Text(
-                          pages[_current_index].subtitle,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(color: Colors.grey[300],
-                              fontSize: 15
-                          ),
-                        ),
-                      ),
-                      //Button
-                      Container(
-                        width: size.width * .8,
-                        height: 50,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () {
-                                setState(() {
-                                  if (_current_index < 4) _current_index++;
-                                });
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                //TODO: Do not go through all onboard
-                                child: TextButton(
-                                  child: Text(
-                                    _current_index == 4
-                                        ? "Register"
-                                        : "Next",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: _current_index == 5
-                                            ? Colors.white
-                                            : Colors.black),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.pushReplacement(context,
-                                      MaterialPageRoute(builder: (_) => Register(),),);
-                                  },
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      //todo: slider
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            height: 10,
-                            width: 10,
-                            margin: EdgeInsets.symmetric(horizontal: 5),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: _current_index == 0
-                                  ? Colors.red
-                                  : Colors.grey[300],
-                            ),
-                          ),
-                          Container(
-                            height: 10,
-                            width: 10,
-                            margin: EdgeInsets.symmetric(horizontal: 5),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: _current_index == 1
-                                  ? Colors.redAccent
-                                  : Colors.grey[300],
-                            ),
-                          ),
-                          Container(
-                            height: 10,
-                            width: 10,
-                            margin: EdgeInsets.symmetric(horizontal: 5),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: _current_index == 2
-                                  ? Colors.red
-                                  : Colors.grey[300],
-                            ),
-                          ),
-                          Container(
-                            height: 10,
-                            width: 10,
-                            margin: EdgeInsets.symmetric(horizontal: 5),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: _current_index == 3
-                                  ? Colors.red
-                                  : Colors.grey[300],
-                            ),
-                          ),
-                          Container(
-                            height: 10,
-                            width: 10,
-                            margin: EdgeInsets.symmetric(horizontal: 5),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: _current_index == 4
-                                  ? Colors.red
-                                  : Colors.grey[300],
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+                   ),
                   ),
-                ),
+               ),
+               ),
               ),
-            ),
-          )
+
+              // dot slider
+              SmoothPageIndicator(controller: _controller, count: 5),
+
+              //Next and Join
+              onLastPage
+               ? GestureDetector(
+                 onTap: () {
+                   Navigator.push(context, 
+                     MaterialPageRoute(builder: (context) {
+                       return Register();
+                     }));
+                  },
+                 child: Text('Register'),
+                 )
+                : GestureDetector(
+                 onTap: () {
+                   _controller.nextPage(
+                     duration: Duration(milliseconds: 500), curve: Curves.easeIn
+                     );
+                  },
+                 child: Text('Next'),
+                 )
+            ],
+          ),
+        ),
         ],
-      ),
+      )
     );
   }
 }

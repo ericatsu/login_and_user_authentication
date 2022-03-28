@@ -78,10 +78,20 @@ class _OnboardState extends State<Onboard> {
                        return Register();
                      }));
                   },
-                 child: Text(
-                        'Next',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      )
+                 child: Container(
+                   decoration: BoxDecoration(
+                     color: Colors.orange,
+                         borderRadius: BorderRadius.circular(10), 
+                   ),
+                        width: 327,
+                        height: 50,
+                   child: Center(
+                     child: Text(
+                            'Register',
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                          ),
+                   ),
+                 )
                  )
                 : GestureDetector(
                  onTap: () {
@@ -89,8 +99,18 @@ class _OnboardState extends State<Onboard> {
                      duration: Duration(milliseconds: 500), curve: Curves.easeIn
                      );
                   },
-                  child: Text('Next',
-                  style: TextStyle(color: Colors.white, fontSize: 18),)
+                  child: Container(
+                    decoration: BoxDecoration(
+                          color: Colors.orange,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        width: 327,
+                        height: 50,
+                    child: Center(
+                      child: Text('Next',
+                      style: TextStyle(color: Colors.white, fontSize: 18),),
+                    ),
+                  )
                  )
             ],
           ),

@@ -5,6 +5,8 @@ class Onboard1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+
     return Stack(
       children: [ ShaderMask(
         shaderCallback: (bounds) => LinearGradient(
@@ -29,13 +31,46 @@ class Onboard1 extends StatelessWidget {
            child: SafeArea(
              child: Column(
                children: [
-                 Container(
-
-                 ),
-                 SizedBox(height: 5,),
-                 Container(
-
-                 ),
+                 Align(
+                   alignment: Alignment.bottomCenter,
+                   child: Padding(
+                     padding: EdgeInsets.all(5),
+                     child: Container(
+                       height: size.height * .4,
+                       width: size.width,
+                       decoration: BoxDecoration(
+                         color: Colors.transparent,
+                       ),
+                       child: Padding(padding: EdgeInsets.symmetric(vertical: 20),
+                       child: Column(
+                         mainAxisSize: MainAxisSize.max,
+                         crossAxisAlignment: CrossAxisAlignment.center,
+                         mainAxisAlignment: MainAxisAlignment.spaceAround,
+                         children: [
+                           //Title
+                          Text(
+                            'Hungry?',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 24,
+                              ),
+                          ),
+                          Container(
+                              width: size.width * .7,
+                              child: Text(
+                                'Confused about which Outfit to wear? Dont worry, find te best outfits here',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    color: Colors.grey[300], fontSize: 15),
+                              ),
+                            ),
+                         ],
+                       ),
+                       ),
+                       ),
+                     ),
+                 )
                ],
              ),
             ),

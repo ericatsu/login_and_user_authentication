@@ -78,7 +78,7 @@ class _OnboardState extends State<Onboard> {
                        return Register();
                      }));
                   },
-                        child: Text(
+                 child: Text(
                         'Next',
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       )

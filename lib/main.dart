@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:login_and_user_authentication/screens/Onboard.dart';
+import 'package:login_and_user_authentication/OnboardScreens/onboard1.dart';
+
 
 
 void main() => runApp(MyApp());
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Login and User Authentication',
       debugShowCheckedModeBanner: false,
-      home: Onboard(),
+      home: Onboard1(),
     );
   }
 }

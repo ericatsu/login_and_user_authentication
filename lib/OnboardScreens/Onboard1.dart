@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:login_and_user_authentication/OnboardScreens/Onboard2.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:login_and_user_authentication/OnboardScreens/Onboard5.dart';
 
 class Onboard1 extends StatelessWidget {
   const Onboard1({ Key? key }) : super(key: key);
 
-  
+
 
   @override
   Widget build(BuildContext context) {
-    PageController _controller = PageController();
     return Scaffold(
       body: SafeArea(child:
             Container(
                 decoration:  BoxDecoration(
                   image: DecorationImage(
-
                     image: AssetImage('assets/images/hungry.png'),
                     fit: BoxFit.fitWidth,
                     colorFilter:
@@ -25,29 +23,39 @@ class Onboard1 extends StatelessWidget {
                   ),
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisSize: MainAxisSize.max,
                     children: <Widget>[
                       Row(
-                          mainAxisAlignment: MainAxisAlignment. end,
-                          children:<Widget>[  FlatButton(
-                            child: const Text(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children:<Widget>[  
+                            TextButton(
+                            child: Text(
                               " Skip", style: TextStyle(
                                   fontSize: 18, color: Colors.white ),
                             ),
-                            onPressed:(){},
+                            onPressed: () {
+                              Navigator.push(
+                                context, MaterialPageRoute(
+                                  builder: (context) => Onboard5()
+                                  )
+                              );
+                            },
                           ),
                       ]
                     ),
+                    
                       Container(
-                        margin: EdgeInsets.only(top:330.0,bottom:6.0 ),
-                        child: const Text('Hungry?',
+                        margin: EdgeInsets.only(top:330.0, bottom:6.0 ),
+                        child: Text('Hungry?',
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
-                            fontSize: 25.00,
+                            fontSize: 24.00,
                           ),
                         ),
                       ),
-                      const Text(
+                      Text(
                         "Confused about which Outfit to wear? Dont worry, find te best outfits here",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -63,41 +71,78 @@ class Onboard1 extends StatelessWidget {
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children:<Widget>[
-
-                                SmoothPageIndicator(controller: _controller, count: 5),
+                                Container(
+                          height: 8,
+                          width: 8,
+                          decoration: new BoxDecoration(
+                            color: Colors.green[800],
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                                Container(
+                                  height: 8,
+                                  width: 8,
+                                  decoration: new BoxDecoration(
+                                    color: Colors.white70,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
+                              
+                                Container(
+                                  height: 8,
+                                  width: 8,
+                                  decoration: new BoxDecoration(
+                                    color: Colors.white70,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
+                                Container(
+                                  height: 8,
+                                  width: 8,
+                                  decoration: new BoxDecoration(
+                                    color: Colors.white70,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
+                                Container(
+                                  height: 8,
+                                  width: 8,
+                                  decoration: new BoxDecoration(
+                                    color: Colors.white70,
+                                    shape: BoxShape.circle,
+                                  ),
+                                ),
                               ]
                           ),
                         ),
                       ),
-                      Expanded(
 
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                          ),
-                          width: 320 ,
-                          child: FlatButton(
-                            color: Colors.orange[800],
-                            shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(4)),
-                            child: const Text(
-                              'Next',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
+                           Container(
+                            decoration: BoxDecoration(
+                              color: Colors.orange,
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            onPressed: (
-                                ){ 
-                                  Navigator.push(
-                                    context, MaterialPageRoute(
-                                      builder: (context) => Onboard2()
-                                      )
-                                  );
-                                },
+                            width: 327,
+                            height: 50,
+                            child: TextButton(
+                              child: const Text(
+                                'Next',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              onPressed: (
+                                  ){ 
+                                    Navigator.push(
+                                      context, MaterialPageRoute(
+                                        builder: (context) => Onboard2()
+                                        )
+                                    );
+                                  },
+                            ),
                           ),
-                        ),
-                      ),
+                      
                     ])
             ),
           ),

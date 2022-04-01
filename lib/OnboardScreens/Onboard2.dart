@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:login_and_user_authentication/OnboardScreens/Onboard3.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:login_and_user_authentication/OnboardScreens/Onboard5.dart';
 
 class Onboard2 extends StatelessWidget {
   const Onboard2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    PageController _controller = PageController();
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -21,12 +20,15 @@ class Onboard2 extends StatelessWidget {
             ),
             child: Column(children: <Widget>[
               Row(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
-                FlatButton(
-                  child: const Text(
+                TextButton(
+                  child: Text(
                     " Skip",
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Onboard5()));
+                  },
                 ),
               ]),
               Container(
@@ -55,32 +57,68 @@ class Onboard2 extends StatelessWidget {
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
-                        SmoothPageIndicator(controller: _controller, count: 5),
+                        Container(
+                          height: 8,
+                          width: 8,
+                          decoration: new BoxDecoration(
+                            color: Colors.white70,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Container(
+                          height: 8,
+                          width: 8,
+                          decoration: new BoxDecoration(
+                            color: Colors.green[800],
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Container(
+                          height: 8,
+                          width: 8,
+                          decoration: new BoxDecoration(
+                            color: Colors.white70,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Container(
+                          height: 8,
+                          width: 8,
+                          decoration: new BoxDecoration(
+                            color: Colors.white70,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                        Container(
+                          height: 8,
+                          width: 8,
+                          decoration: new BoxDecoration(
+                            color: Colors.white70,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
                       ]),
                 ),
               ),
-              Expanded(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(50)),
-                  ),
-                  width: 320,
-                  child: FlatButton(
-                    color: Colors.orange[800],
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4)),
-                    child: const Text(
-                      'Next',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                      ),
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.orange,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                width: 327,
+                height: 50,
+                child: TextButton(
+                  child: const Text(
+                    'Next',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
                     ),
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Onboard3()));
-                    },
                   ),
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Onboard3()));
+                  },
                 ),
               ),
             ])),

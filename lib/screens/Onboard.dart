@@ -48,18 +48,26 @@ class _OnboardState extends State<Onboard> {
             children: [
 
               //Skip
-                   GestureDetector(
-                       onTap: () {
-                         _controller.jumpToPage(4);
-                        },
-                       child: Text('Skip',
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                   SafeArea(
+                     child: Align(
+                       alignment: Alignment.topRight,
+                       child: Padding(
+                         padding:  EdgeInsets.only(right: 20),
+                         child: GestureDetector(
+                             onTap: () {
+                               _controller.jumpToPage(4);
+                              },
+                             child: Text('Skip',
+                            style: TextStyle(color: Colors.white, fontSize: 18),
+                             ),
+                            ),
                        ),
-                      ),
+                     ),
+                   ),
                    
 
                   // dot slider
-                  SmoothPageIndicator(controller: _controller, count: 5),
+              SmoothPageIndicator(controller: _controller, count: 5),
                
               //Next and Join
               onLastPage

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:login_and_user_authentication/screens/Platform.dart';
 
 
@@ -107,17 +108,23 @@ class _RegisterState extends State<Register> {
               ),
               //Country TODO: Add countries dropdown
               SizedBox(height: height*0.05),
-              TextFormField(
-                  decoration: InputDecoration(
-                    labelText: "Country",
-                    hintText: "Select your Country",
-                    hintStyle: TextStyle(fontSize: 18), //hint text style
-                    labelStyle: TextStyle(
-                        fontSize: 16,
-                        color: Colors.black,
-                        fontWeight: FontWeight.w600),
-                  ),
-                ),
+              InternationalPhoneNumberInput(
+                onInputChanged: ((value) {
+                  
+                }),
+                // child: TextFormField(
+                //     decoration: InputDecoration(
+    
+                //       labelText: "Country",
+                //       hintText: "Select your Country",
+                //       hintStyle: TextStyle(fontSize: 18), //hint text style
+                //       labelStyle: TextStyle(
+                //           fontSize: 16,
+                //           color: Colors.black,
+                //           fontWeight: FontWeight.w600),
+                //     ),
+                //   ),
+              ),
               // TextFormField(
               //   decoration: InputDecoration(
               //     labelText: "Counntry",

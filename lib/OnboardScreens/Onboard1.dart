@@ -50,7 +50,7 @@ class Onboard1 extends StatelessWidget {
                     
                     SizedBox(height: height * 0.25),
                       Container(
-                        margin: EdgeInsets.only(top:330.0, bottom:6.0 ),
+                        margin: EdgeInsets.only(top:300.0, bottom:5.0),
                         child: Text('Hungry?',
                           style: TextStyle(
                             color: Colors.white,
@@ -70,23 +70,23 @@ class Onboard1 extends StatelessWidget {
 
                       // Sliders; 
                       Container(
-                        margin: EdgeInsets.symmetric(vertical:30.0,horizontal: 10 ),
+                        margin: EdgeInsets.symmetric(vertical:50.0,horizontal: 15 ),
                         child: Padding(
-                          padding: const EdgeInsets.only(left: 120,right:120),
+                          padding: const EdgeInsets.only(left: 100, right:100),
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children:<Widget>[
                                 Container(
-                                height: 8,
-                                width: 8,
-                          decoration: new BoxDecoration(
-                            color: Colors.orange,
-                            shape: BoxShape.circle,
+                                height: 10.0,
+                                width: 10.0,
+                                decoration: new BoxDecoration(
+                               color: Colors.orange,
+                                shape: BoxShape.circle,
                                ),
                              ),
                                 Container(
-                                  height: 8,
-                                  width: 8,
+                                  height: 10,
+                                  width: 10,
                                   decoration: new BoxDecoration(
                                     color: Colors.grey,
                                     shape: BoxShape.circle,
@@ -94,24 +94,24 @@ class Onboard1 extends StatelessWidget {
                                 ),
                               
                                 Container(
-                                  height: 8,
-                                  width: 8,
+                                  height: 10,
+                                  width: 10,
                                   decoration: new BoxDecoration(
                                     color: Colors.grey,
                                     shape: BoxShape.circle,
                                   ),
                                 ),
                                 Container(
-                                  height: 8,
-                                  width: 8,
+                                  height: 10,
+                                  width: 10,
                                   decoration: new BoxDecoration(
                                     color: Colors.grey,
                                     shape: BoxShape.circle,
                                   ),
                                 ),
                                 Container(
-                                  height: 8,
-                                  width: 8,
+                                  height: 10,
+                                  width: 10,
                                   decoration: new BoxDecoration(
                                     color: Colors.grey,
                                     shape: BoxShape.circle,

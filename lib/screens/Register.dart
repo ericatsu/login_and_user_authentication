@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
+import 'package:login_and_user_authentication/OnboardScreens/Onboard5.dart';
 import 'package:login_and_user_authentication/screens/Platform.dart';
 
 
@@ -36,7 +37,13 @@ class _RegisterState extends State<Register> {
           ),
         ],
         leading: IconButton(
-          onPressed: () => {},
+          onPressed: () {
+            Navigator.push(
+              context, MaterialPageRoute(
+                builder: (context) => Onboard5()
+                )
+              );
+          },
           icon: Icon(
             Icons.arrow_back,
             color: Colors.black,
@@ -89,50 +96,34 @@ class _RegisterState extends State<Register> {
                 },
               ),
 
-              //Phone Number TODO: Add International options
+              //Phone Number
               SizedBox(height: height*0.05),
+              InternationalPhoneNumberInput(
+                onInputChanged: ((value) {}
+                ),
+                cursorColor: Colors.black,
+                formatInput: false,
+                selectorConfig: SelectorConfig(
+                  selectorType: PhoneInputSelectorType.BOTTOM_SHEET
+                  ),
+                inputDecoration: InputDecoration(
+                  hintText: '123xxxxxxxx',
+                  hintStyle: TextStyle(
+                    fontSize: 18
+                  ),
+                ),
+              ),
+
+              //Country
+              SizedBox(height: height * 0.05),
               TextFormField(
                 decoration: InputDecoration(
-                  labelText: "Phone Number",
-                  hintText: "e.g.. 123xxxxxxxxx",
+                  labelText: "Counntry",
+                  hintText: "Select your country",
                   hintStyle: TextStyle(fontSize: 18 ), //hint text style
                   labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
                 ),
-                validator: (value){
-                  if(value!.isEmpty ||!RegExp(r'^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]+$').hasMatch(value!)){
-                    return "Enter a valid phone number";
-                  } else{
-                    return null;
-                  }
-                },
               ),
-              //Country TODO: Add countries dropdown
-              SizedBox(height: height*0.05),
-              InternationalPhoneNumberInput(
-                onInputChanged: ((value) {
-                  
-                }),
-                // child: TextFormField(
-                //     decoration: InputDecoration(
-    
-                //       labelText: "Country",
-                //       hintText: "Select your Country",
-                //       hintStyle: TextStyle(fontSize: 18), //hint text style
-                //       labelStyle: TextStyle(
-                //           fontSize: 16,
-                //           color: Colors.black,
-                //           fontWeight: FontWeight.w600),
-                //     ),
-                //   ),
-              ),
-              // TextFormField(
-              //   decoration: InputDecoration(
-              //     labelText: "Counntry",
-              //     hintText: "Select your country",
-              //     hintStyle: TextStyle(fontSize: 18 ), //hint text style
-              //     labelStyle: TextStyle(fontSize: 16, color: Colors.black, fontWeight: FontWeight.w600),
-              //   ),
-              // ),
 
               //Identification Type TODO: Add ID dropdown
               SizedBox(height: height*0.05),

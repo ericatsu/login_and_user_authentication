@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_and_user_authentication/screens/OTPcode.dart';
+import 'package:login_and_user_authentication/screens/Register.dart';
 
 class Platform extends StatefulWidget {
   const Platform({Key? key}) : super(key: key);
@@ -18,19 +19,23 @@ class _PlatformState extends State<Platform> {
     return Scaffold(
         appBar: AppBar(
             centerTitle:true,
-            title: Text("STEP 2 OF 2"),
+            title: Text("STEP 2 OF 3"),
             titleTextStyle: TextStyle(color: Colors.black54, fontSize: 14, fontWeight: FontWeight.w300),
             backgroundColor: Colors.white,
             elevation: 0,
             actions: [
-              IconButton(onPressed: () => {},
+              IconButton(
+                onPressed: () => {},
                 icon: Icon(
                     Icons.info,
                     color: Colors.black),
               ),
             ],
             leading: IconButton(
-              onPressed: () => {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Register()));
+              },
               icon: Icon(
                 Icons.arrow_back,
                 color: Colors.black,

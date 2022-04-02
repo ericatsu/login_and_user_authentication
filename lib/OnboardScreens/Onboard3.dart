@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:login_and_user_authentication/OnboardScreens/Onboard3.dart';
 import 'package:login_and_user_authentication/OnboardScreens/Onboard4.dart';
-import 'package:login_and_user_authentication/OnboardScreens/Onboard5.dart';
+import 'package:login_and_user_authentication/screens/Register.dart';
 
 class Onboard3 extends StatelessWidget {
   const Onboard3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -28,10 +28,13 @@ class Onboard3 extends StatelessWidget {
                   ),
                   onPressed: () {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Onboard5()));
+                        MaterialPageRoute(builder: (context) => Register()));
                   },
                 ),
-              ]),
+               ]
+              ),
+
+              SizedBox(height: height * 0.25),
               Container(
                 margin: EdgeInsets.only(top: 330.0, bottom: 6.0),
                 child: const Text(
@@ -62,7 +65,7 @@ class Onboard3 extends StatelessWidget {
                           height: 8,
                           width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -71,7 +74,7 @@ class Onboard3 extends StatelessWidget {
                           height: 8,
                           width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -87,7 +90,7 @@ class Onboard3 extends StatelessWidget {
                           height: 8,
                           width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -95,7 +98,7 @@ class Onboard3 extends StatelessWidget {
                           height: 8,
                           width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
                         ),

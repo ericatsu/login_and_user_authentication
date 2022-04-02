@@ -6,6 +6,7 @@ class Onboard5 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -32,6 +33,7 @@ class Onboard5 extends StatelessWidget {
                ]
               ),
 
+              SizedBox(height: height * 0.25),
               Container(
                 margin: EdgeInsets.only(top: 330.0, bottom: 6.0),
                 child: Text(
@@ -63,7 +65,7 @@ class Onboard5 extends StatelessWidget {
                           height: 8,
                           width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -71,7 +73,7 @@ class Onboard5 extends StatelessWidget {
                           height: 8,
                           width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -79,7 +81,7 @@ class Onboard5 extends StatelessWidget {
                           height: 8,
                           width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
                         ),
@@ -87,7 +89,7 @@ class Onboard5 extends StatelessWidget {
                           height: 8,
                           width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.white70,
+                            color: Colors.grey,
                             shape: BoxShape.circle,
                           ),
                         ),

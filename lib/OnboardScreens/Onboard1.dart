@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_and_user_authentication/OnboardScreens/Onboard2.dart';
-import 'package:login_and_user_authentication/OnboardScreens/Onboard5.dart';
+import 'package:login_and_user_authentication/screens/Register.dart';
 
 class Onboard1 extends StatelessWidget {
   const Onboard1({ Key? key }) : super(key: key);
@@ -9,6 +9,9 @@ class Onboard1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
+    
+
     return Scaffold(
       body: SafeArea(child:
             Container(
@@ -37,7 +40,7 @@ class Onboard1 extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(
                                 context, MaterialPageRoute(
-                                  builder: (context) => Onboard5()
+                                  builder: (context) => Register()
                                   )
                               );
                             },
@@ -45,6 +48,7 @@ class Onboard1 extends StatelessWidget {
                       ]
                     ),
                     
+                    SizedBox(height: height * 0.25),
                       Container(
                         margin: EdgeInsets.only(top:330.0, bottom:6.0 ),
                         child: Text('Hungry?',
@@ -63,27 +67,28 @@ class Onboard1 extends StatelessWidget {
                           fontSize: 16.00,
                         ),
                       ),
+
+                      // Sliders; 
                       Container(
                         margin: EdgeInsets.symmetric(vertical:30.0,horizontal: 10 ),
                         child: Padding(
                           padding: const EdgeInsets.only(left: 120,right:120),
-                          //Slider
                           child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children:<Widget>[
                                 Container(
-                          height: 8,
-                          width: 8,
+                                height: 8,
+                                width: 8,
                           decoration: new BoxDecoration(
-                            color: Colors.green[800],
+                            color: Colors.orange,
                             shape: BoxShape.circle,
-                          ),
-                        ),
+                               ),
+                             ),
                                 Container(
                                   height: 8,
                                   width: 8,
                                   decoration: new BoxDecoration(
-                                    color: Colors.white70,
+                                    color: Colors.grey,
                                     shape: BoxShape.circle,
                                   ),
                                 ),
@@ -92,7 +97,7 @@ class Onboard1 extends StatelessWidget {
                                   height: 8,
                                   width: 8,
                                   decoration: new BoxDecoration(
-                                    color: Colors.white70,
+                                    color: Colors.grey,
                                     shape: BoxShape.circle,
                                   ),
                                 ),
@@ -100,7 +105,7 @@ class Onboard1 extends StatelessWidget {
                                   height: 8,
                                   width: 8,
                                   decoration: new BoxDecoration(
-                                    color: Colors.white70,
+                                    color: Colors.grey,
                                     shape: BoxShape.circle,
                                   ),
                                 ),
@@ -108,7 +113,7 @@ class Onboard1 extends StatelessWidget {
                                   height: 8,
                                   width: 8,
                                   decoration: new BoxDecoration(
-                                    color: Colors.white70,
+                                    color: Colors.grey,
                                     shape: BoxShape.circle,
                                   ),
                                 ),

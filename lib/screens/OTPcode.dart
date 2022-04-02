@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:login_and_user_authentication/screens/Platform.dart';
 
 class OTPcode extends StatefulWidget {
   const OTPcode({Key? key}) : super(key: key);
@@ -28,7 +29,10 @@ class _OTPcodeState extends State<OTPcode> {
             ),
           ],
           leading: IconButton(
-            onPressed: () => {},
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Platform()));
+            },
             icon: Icon(
               Icons.arrow_back,
               color: Colors.black,

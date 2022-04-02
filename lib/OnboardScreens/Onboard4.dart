@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_and_user_authentication/OnboardScreens/Onboard5.dart';
-import 'package:login_and_user_authentication/screens/Register.dart';
+
 
 class Onboard4 extends StatelessWidget {
   const Onboard4({Key? key}) : super(key: key);
@@ -20,20 +19,7 @@ class Onboard4 extends StatelessWidget {
               ),
             ),
             child: Column(children: <Widget>[
-              Row(mainAxisAlignment: MainAxisAlignment.end, children: <Widget>[
-                TextButton(
-                  child: Text(
-                    " Skip",
-                    style: TextStyle(fontSize: 18, color: Colors.white),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Register()));
-                  },
-                ),
-               ]
-              ),
-
+            
               SizedBox(height: height * 0.25),
               Container(
                 margin: EdgeInsets.only(top:  300.0, bottom: 5.0),
@@ -50,82 +36,12 @@ class Onboard4 extends StatelessWidget {
                 "Customize your unique styles, so you can look amazing anyday",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.white54,
+                  color: Colors.white,
                   fontSize: 16.00,
                 ),
               ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 100, right: 100),
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: new BoxDecoration(
-                            color: Colors.grey,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: new BoxDecoration(
-                            color: Colors.grey,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: new BoxDecoration(
-                            color: Colors.grey,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: new BoxDecoration(
-                            color: Colors.green[800],
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                        Container(
-                          height: 10,
-                          width: 10,
-                          decoration: new BoxDecoration(
-                            color: Colors.grey,
-                            shape: BoxShape.circle,
-                          ),
-                        ),
-                      ]),
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                width: 327,
-                height: 50,
-                child: TextButton(
-                  child: const Text(
-                    'Next',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Onboard5()));
-                  },
-                ),
-              ),
+              
+              
             ])),
       ),
     );

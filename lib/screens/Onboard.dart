@@ -22,6 +22,9 @@ class _OnboardState extends State<Onboard> {
 
   @override
   Widget build(BuildContext context) {
+  final double height = MediaQuery.of(context).size.height;
+  
+
     return Scaffold(
       body: Stack(
         children: [
@@ -48,70 +51,71 @@ class _OnboardState extends State<Onboard> {
             children: [
 
               //Skip
-                  //  SafeArea(
-                  //    child: Align(
-                  //      alignment: Alignment.topRight,
-                  //      child: Padding(
-                  //        padding:  EdgeInsets.only(right: 20),
-                  //        child: GestureDetector(
-                  //            onTap: () {
-                  //              _controller.jumpToPage(4);
-                  //             },
-                  //            child: Text('Skip',
-                  //           style: TextStyle(color: Colors.white, fontSize: 18),
-                  //            ),
-                  //           ),
-                  //      ),
-                  //    ),
-                  //  ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        GestureDetector(
+                                 onTap: () {
+                                   _controller.jumpToPage(4);
+                                  },
+                                 child: Text('Skip',
+                                style: TextStyle(color: Colors.white, fontSize: 18),
+                                 ),
+                                ),
+                      ],
+                    ),
+                       
+
                    
 
                   // dot slider
+                SizedBox(height: height * 0.78),
                 SmoothPageIndicator(controller: _controller, count: 5),
                
               //Next and Join
-              // onLastPage
-              //    ? GestureDetector(
-              //      onTap: () {
-              //        Navigator.push(context, 
-              //          MaterialPageRoute(builder: (context) {
-              //            return Register();
-              //          }));
-              //       },
-              //      child: Container(
-              //        decoration: BoxDecoration(
-              //          color: Colors.orange,
-              //              borderRadius: BorderRadius.circular(10), 
-              //        ),
-              //             width: 327,
-              //             height: 50,
-              //        child: Center(
-              //          child: Text(
-              //                 'Register',
-              //                 style: TextStyle(color: Colors.white, fontSize: 18),
-              //               ),
-              //        ),
-              //      )
-              //      )
-              //     : GestureDetector(
-              //      onTap: () {
-              //        _controller.nextPage(
-              //          duration: Duration(milliseconds: 500), curve: Curves.easeIn
-              //          );
-              //       },
-              //       child: Container(
-              //         decoration: BoxDecoration(
-              //               color: Colors.orange,
-              //               borderRadius: BorderRadius.circular(10),
-              //             ),
-              //             width: 327,
-              //             height: 50,
-              //         child: Center(
-              //           child: Text('Next',
-              //           style: TextStyle(color: Colors.white, fontSize: 18),),
-              //         ),
-              //       )
-              //     ) 
+              SizedBox(height: height * 0.05),
+              onLastPage
+                 ? GestureDetector(
+                   onTap: () {
+                     Navigator.push(context, 
+                       MaterialPageRoute(builder: (context) {
+                         return Register();
+                       }));
+                    },
+                   child: Container(
+                     decoration: BoxDecoration(
+                       color: Colors.orange,
+                           borderRadius: BorderRadius.circular(10), 
+                     ),
+                          width: 327,
+                          height: 50,
+                     child: Center(
+                       child: Text(
+                              'Register',
+                              style: TextStyle(color: Colors.white, fontSize: 18),
+                            ),
+                     ),
+                   )
+                   )
+                  : GestureDetector(
+                   onTap: () {
+                     _controller.nextPage(
+                       duration: Duration(milliseconds: 500), curve: Curves.easeIn
+                       );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          width: 327,
+                          height: 50,
+                      child: Center(
+                        child: Text('Next',
+                        style: TextStyle(color: Colors.white, fontSize: 18),),
+                      ),
+                    )
+                  ) 
             ],
           ),
         ),

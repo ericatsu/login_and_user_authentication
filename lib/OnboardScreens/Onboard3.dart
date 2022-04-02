@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:login_and_user_authentication/OnboardScreens/Onboard4.dart';
-import 'package:login_and_user_authentication/screens/Register.dart';
 
 class Onboard3 extends StatelessWidget {
   const Onboard3({Key? key}) : super(key: key);
@@ -22,7 +20,7 @@ class Onboard3 extends StatelessWidget {
             child: Column(children: <Widget>[
               
 
-              SizedBox(height: height * 0.25),
+              SizedBox(height: height * 0.32),
               Container(
                 margin: EdgeInsets.only(top:  300.0, bottom: 5.0),
                 child: const Text(

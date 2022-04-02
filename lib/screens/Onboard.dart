@@ -64,13 +64,21 @@ class _OnboardState extends State<Onboard> {
                                 ),
                       ],
                     ),
-                       
-
-                   
-
+            
                   // dot slider
                 SizedBox(height: height * 0.78),
-                SmoothPageIndicator(controller: _controller, count: 5),
+                SmoothPageIndicator(
+                  controller: _controller, 
+                  count: 5,
+                  effect: SlideEffect(
+                    dotColor: Colors.white,
+                    activeDotColor: Colors.orange,
+                    spacing: 15.0,
+                    dotWidth: 10,
+                    dotHeight: 10,
+                     
+                    ),
+                  ),
                
               //Next and Join
               SizedBox(height: height * 0.05),

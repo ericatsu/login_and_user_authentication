@@ -29,7 +29,7 @@ class Onboard1 extends StatelessWidget {
                     children: <Widget>[
                     
                     
-                    SizedBox(height: height * 0.25),
+                    SizedBox(height: height * 0.32),
                       Container(
                         margin: EdgeInsets.only(top:300.0, bottom:5.0),
                         child: Text('Hungry?',
